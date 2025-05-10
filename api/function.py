@@ -1,6 +1,31 @@
 import logging
 import azure.functions as func
 import json
+
+def main(req: func.HttpRequest) -> func.HttpResponse:
+    logging.info("Echo function triggered.")
+
+    try:
+        # Try to get JSON body
+        req_body = req.get_json()
+        text = req_body.get("text")
+    except ValueError:
+        # If no JSON, get from query string or raw body
+        text = req.params.get("text") or req.get_body().decode()
+
+    if text:
+        return func.HttpResponse(f"{text}", status_code=200)
+    else:
+        return func.HttpResponse(
+            "Please send text either in JSON body {'text': 'your message'} or as query ?text=your message",
+            status_code=400
+        )
+
+
+""" 
+import logging
+import azure.functions as func
+import json
 # from azure.ai.formrecognizer import DocumentAnalysisClient
 # from azure.core.credentials import AzureKeyCredential
 
@@ -62,4 +87,4 @@ if __name__ == "__main__":
     response = main(mock_req)
     if response:
         print(f"Status Code: {response.status_code}")
-        print(f"Body: {response.get_body()}")
+        print(f"Body: {response.get_body()}") """
