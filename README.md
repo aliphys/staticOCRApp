@@ -10,7 +10,7 @@ This project demonstrates a basic structure for a static web application hosted 
 
 **Backend (Azure Function):**
 - A Python Azure Function that receives the uploaded PDF.
-- **Currently contains a placeholder for PDF processing logic.** You will need to implement the actual PDF data extraction using Azure Document Intelligence or a PDF processing library.
+- **Currently contains a placeholder for PDF processing logic.** 
 - Returns the extracted data as a JSON response.
 
 **Next Steps:**
