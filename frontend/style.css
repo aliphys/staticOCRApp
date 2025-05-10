@@ -1,0 +1,25 @@
+body {
+    font-family: sans-serif;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
+}
+
+input[type="file"] {
+    margin-bottom: 10px;
+}
+
+button {
+    padding: 8px 15px;
+    cursor: pointer;
+}
+
+#output {
+    margin-top: 20px;
+    white-space: pre-wrap; /* Preserve formatting */
+    font-family: monospace;
+    border: 1px solid #ccc;
+    padding: 10px;
+    width: 80%;
+}
