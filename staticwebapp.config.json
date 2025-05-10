@@ -1,0 +1,13 @@
+{
+    "routes": [],
+    "navigationFallback": {
+      "rewrite": "/index.html",
+      "exclude": ["/api/*"]
+    },
+    "platform": {
+      "apiRuntime": "python:3.12" // Specify the Python version for the API runtime
+    },
+    "appLocation": "./frontend",
+    "apiLocation": "./api",
+    "outputLocation": ""
+}
